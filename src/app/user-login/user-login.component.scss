@@ -1,0 +1,115 @@
+@import 'src/assets/variables';
+
+.container-fluid { 
+    // padding-left: 6.25rem !important;
+}
+
+.login {
+    // height: 100%;
+    align-items: center;
+    &__left {
+        
+        margin-bottom: 15rem;
+        background-color: transparent;
+
+        &__logo { 
+            
+        }
+
+
+
+        &__title { 
+            text-align: center;
+            h2 { 
+                font-weight: 600;
+                font-size: 30px;
+                line-height: 44px;
+                user-select: none;
+
+
+            }
+
+            h1 { 
+                font-weight: bolder;
+                font-size: 60px;
+                user-select: none;
+            }
+        }
+        &__form {
+            
+           &__controls  {
+               display: flex;
+               justify-content: center;
+               input {
+                   border: 2px solid black;
+                   width: 387px;
+                   height: 64px;
+                   outline: none;
+                   box-shadow: none;
+
+                   &:focus { 
+                box-shadow: 0px 8px 15px rgba(0, 0, 0, .7);
+                       
+                   }
+               }
+           }
+
+           &__button  { 
+            text-align: center;
+                    
+           }
+        }; 
+    
+        &__animation { 
+            height: 100%;
+            svg { 
+                width: 20rem;
+            }
+        }
+        
+    }
+
+}
+
+
+::placeholder {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 34px;
+    /* identical to box height, or 170% */
+
+    letter-spacing: -0.33px;
+
+    /* Black */
+
+    color: #3D3D3D;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 34px;
+    /* identical to box height, or 170% */
+
+    letter-spacing: -0.33px;
+
+    /* Black */
+
+    color: #3D3D3D;
+    opacity: 1; /* Firefox */
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 34px;
+    /* identical to box height, or 170% */
+
+    letter-spacing: -0.33px;
+
+    /* Black */
+
+    color: #3D3D3D;
+    opacity: 1; /* Firefox */
+  }

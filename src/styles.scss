@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+html, body { 
+    height: 100%; 
+}
+
+body { 
+    margin: 0; 
+    font-family: 'Inter', sans-serif;
+
+}; 
+
+.main-button { 
+                color: white;
+                text-align: center;
+                background: #FF7171;
+                padding: 0px 26px;
+                width: 133px;
+                height: 48px;
+                border: none;
+                font-weight: bolder;
+                outline: none;
+                font-size: 1.3rem;
+                letter-spacing: .1rem;
+                box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease 0s;
+                cursor: pointer;
+
+                &:focus {
+                    outline: none;
+                }
+
+                &:hover {
+                    background-color: #2EE59D;
+                    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+                    color: #fff;
+                    transform: translateY(7px);
+                }
+
+}
+

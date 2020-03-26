@@ -1,0 +1,8 @@
+@import 'src/assets/variables'; 
+
+.profile {
+
+    &__left-navigation { 
+        background-color: $light-grey;
+    }
+}

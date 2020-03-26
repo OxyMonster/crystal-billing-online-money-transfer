@@ -1,0 +1,17 @@
+@import 'src/assets/variables'; 
+
+.not-found {
+    background-color: $light-grey;
+    &__img { 
+       
+    }
+
+    &__button {
+        text-align: center;
+
+        button { 
+            white-space: nowrap;
+            padding: 0;
+        }
+    }
+}
