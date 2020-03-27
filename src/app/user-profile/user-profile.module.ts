@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { UserProfileTransactionsComponent } from './user-profile-transactions/user-profile-transactions.component';
 import { UserProfileHomeComponent } from './user-profile-home/user-profile-home.component';
 import { DayNightComponent } from './components/day-night/day-night.component';
+import { AuthGuard } from '../shared/guards/auth.guard';
 
 
 const COMPONENTS = [ 
@@ -31,6 +32,9 @@ const COMPONENTS = [
     RouterModule,
     UserProfileRoutingModule
   ], 
-  exports: COMPONENTS
+  exports: COMPONENTS,
+  providers: [
+    AuthGuard
+  ]
 })
 export class UserProfileModule { }

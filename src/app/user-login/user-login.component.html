@@ -14,18 +14,30 @@
                 <div class="login__left__form__controls mt-4">
                     <input type="text" 
                            placeholder="Phone" 
-                           class="form-control"
+                           class="default-input"
+                           [ngClass]="{'error': isError, 
+                                        'default-input': !isError }"
                            formControlName="msisdn">
                 </div>
                 <div class="login__left__form__controls mt-3">
                     <input class="password" 
                            type="password" 
                            placeholder="Password" 
-                           class="form-control"
+                           class="default-input"
+                           [ngClass]="{'error': isError, 
+                                        'default-input': !isError }"
                            formControlName="pin">
                 </div>
                 <div class="login__left__form__button mt-4">
-                        <button class="main-button" type="submit">SIGNIN</button>
+                        <button  *ngIf="!isSubmited; else showLoading"
+                                  class="main-button" 
+                                  type="submit">SIGNIN
+                        </button>
+                        <ng-template #showLoading>
+                            <div class="login__left__form__button__loading">
+                                <img src="assets/img/loading.svg" alt="">
+                            </div>
+                        </ng-template>
                 </div>
             </form>
             </div>

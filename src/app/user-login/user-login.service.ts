@@ -18,6 +18,8 @@ export class UserLoginService {
   userLogin(userForm: Object) {
 
     return this.http.post(this.apiURL, userForm); 
-  }
+  }; 
+
+  
 
 }

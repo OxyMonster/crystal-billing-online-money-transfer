@@ -13,6 +13,9 @@ export class UserLoginComponent implements OnInit {
   userForm: FormGroup;
   isEngLangActive: boolean = false; 
 
+  isError: boolean = false; 
+  isSubmited: boolean = false; 
+
   constructor(
     private router: Router,
     private fb: FormBuilder, 
@@ -31,15 +34,17 @@ export class UserLoginComponent implements OnInit {
   }
 
 
-  routetoUserPofile() {
-
-    this.router.navigate(['/user-profile'])
-  }; 
+  clearError(e) { 
+    console.log(e);
+    
+  }
 
 
   onSubmit(userForm: FormGroup) {
-    console.log(userForm.value);
-    
+
+    this.isSubmited = true; 
+    this.isError = false;
+
       //  * * * Set Language * * * 
       this.isEngLangActive ? this.userForm.controls['languageId'].setValue(2) : 
                              this.userForm.controls['languageId'].setValue(1); 
@@ -48,7 +53,20 @@ export class UserLoginComponent implements OnInit {
         .userLogin(userForm.value)
         .subscribe( data => {
           
+          if ( !data['isSuccess'] ) {
+
+            this.isError = true; 
+            this.isSubmited = false;
+          } else { 
+            this.isError = false;
+            this.isSubmited = false;
+            localStorage.setItem('sessionId', data['data']['sessionId']);
+            localStorage.setItem('msisdn', userForm.value.msisdn );
+
+            this.router.navigate(['/user-profile/home']); 
+          }
           console.log(data);
+          
           
         }, err => console.log(err)); 
     
