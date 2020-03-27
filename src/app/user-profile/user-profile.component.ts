@@ -16,8 +16,7 @@ export class UserProfileComponent implements OnInit {
   }
 
 
-  getisDayOrNight(e) {
-    console.log(e);
+  getisDayOrNight(e: boolean) {
     this.isDay = e;
   }
 

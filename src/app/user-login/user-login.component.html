@@ -8,15 +8,24 @@
                 <h2>Short headline</h2>
                 <h1>Join the hype</h1>
             </div>
-            <form action="login__left__form col-12">
+            <form class="login__left__form col-12"  
+                  [formGroup]="userForm" 
+                  (ngSubmit)="onSubmit(userForm)">
                 <div class="login__left__form__controls mt-4">
-                    <input type="text" placeholder="Name" class="form-control">
+                    <input type="text" 
+                           placeholder="Phone" 
+                           class="form-control"
+                           formControlName="msisdn">
                 </div>
                 <div class="login__left__form__controls mt-3">
-                    <input class="password" type="password" placeholder="Password" class="form-control">
+                    <input class="password" 
+                           type="password" 
+                           placeholder="Password" 
+                           class="form-control"
+                           formControlName="pin">
                 </div>
                 <div class="login__left__form__button mt-4">
-                        <button class="main-button" (click) = 'routetoUserPofile()'>SIGNIN</button>
+                        <button class="main-button" type="submit">SIGNIN</button>
                 </div>
             </form>
             </div>
