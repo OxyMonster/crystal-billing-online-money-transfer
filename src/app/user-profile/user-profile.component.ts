@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserProfileComponent implements OnInit {
 
+  isDay: boolean =  false
+
   constructor() { }
 
   ngOnInit(): void {
+
+  }
+
+
+  getisDayOrNight(e) {
+    console.log(e);
+    this.isDay = e;
   }
 
 }
