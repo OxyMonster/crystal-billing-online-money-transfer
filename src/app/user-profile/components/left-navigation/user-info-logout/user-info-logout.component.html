@@ -5,9 +5,11 @@
         </div>
     </div>
     <div class="user__info col-xl-8">
-        <p class="user-name">David Sylvian</p>
+        <p class="user-name"> {{ userPhone }} </p>
         <div class="">
-            <p class="logout" style="cursor: pointer;">Logout</p>
+            <p class="logout" 
+               style="cursor: pointer;"
+               (click) = 'signOut()'>Logout</p>
         </div>
     </div>
 </div>

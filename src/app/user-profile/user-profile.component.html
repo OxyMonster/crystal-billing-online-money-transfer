@@ -6,13 +6,15 @@
         <div class="profile__content__top-navigation p-2">
             <app-top-navigation></app-top-navigation>
         </div>
-        <div class="profile__content__main" 
+        <div class="profile__content__main h-100" 
              [ngClass]="{ 'day': isDay, 
                           'night': !isDay }">
             <div class="d-flex justify-content-end">
                 <app-day-night (result) = 'getisDayOrNight($event)'></app-day-night>
             </div>
-            <router-outlet></router-outlet>
+            <div class="h-100">
+                <router-outlet></router-outlet>
+            </div>
         </div>
     </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UtileService } from 'src/app/shared/services/utile.service';
 
 @Component({
   selector: 'app-user-info-logout',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserInfoLogoutComponent implements OnInit {
 
-  constructor() { }
+  userPhone: string; 
+
+  constructor(
+    private utileService: UtileService
+  ) { }
 
   ngOnInit(): void {
+
+    this.userPhone =  this.utileService.getUserPhone(); 
+
+
+  };
+  
+  
+  signOut() {
+    this.utileService.logOut();
   }
+
+
+
 
 }

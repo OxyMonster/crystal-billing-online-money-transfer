@@ -1,97 +1,28 @@
-<div class="row drafts">
+<div class="row drafts" >
 
-    <div class="drafts__box col-lg-3 mt-5">
-        <div class="drafts__box__img">
-            <img src="assets/img/Image.png" alt="">
-        </div>
-        <div class="drafts__box__name">
-            <p>Telasi</p>
-        </div>
-        <div class="drafts__box__amount">
-            <span>-130 GEL</span>
-        </div>
-        <div class="drafts__box__button">
-            <button class="main-button p-0">Pay now</button>
-        </div>    
-    </div>
+    <ng-container *ngIf="billersCategoryList.length > 0; else showLoading">
 
+        <div class="drafts__box col-lg-3 mt-5" *ngFor="let item of billersCategoryList">
+            <div class="drafts__box__img">
+                <img src="assets/img/Image.png" alt="">
+            </div>
+            <div class="drafts__box__name">
+                <p> {{ item.title }} </p>
+            </div>
+            <div class="drafts__box__amount">
+                <span>- {{ item.logoIcon }} </span>
+            </div>  
+            <div class="drafts__box__button">
+                <button class="main-button p-0" (click) = 'routeToCategory(item.name)'>Select</button>
+            </div>    
+        </div>
 
-    <div class="drafts__box col-lg-3 mt-5">
-        <div class="drafts__box__img">
-            <img src="assets/img/Image.png" alt="">
-        </div>
-        <div class="drafts__box__name">
-            <p>Telasi</p>
-        </div>
-        <div class="drafts__box__amount">
-            <span>-130 GEL</span>
-        </div>
-        <div class="drafts__box__button">
-            <button class="main-button p-0">Pay now</button>
-        </div>    
-    </div>
+    </ng-container>
 
-    <div class="drafts__box col-lg-3 mt-5">
-        <div class="drafts__box__img">
-            <img src="assets/img/Image.png" alt="">
+    <ng-template #showLoading>
+        <div class="drafts__loading col-12 d-flex justify-content-center align-items-center">
+            <app-loading-spinner></app-loading-spinner>
         </div>
-        <div class="drafts__box__name">
-            <p>Telasi</p>
-        </div>
-        <div class="drafts__box__amount">
-            <span>-130 GEL</span>
-        </div>
-        <div class="drafts__box__button">
-            <button class="main-button p-0">Pay now</button>
-        </div>    
-    </div>
-
-
-    <div class="drafts__box col-lg-3 mt-5">
-        <div class="drafts__box__img">
-            <img src="assets/img/Image.png" alt="">
-        </div>
-        <div class="drafts__box__name">
-            <p>Telasi</p>
-        </div>
-        <div class="drafts__box__amount">
-            <span>-130 GEL</span>
-        </div>
-        <div class="drafts__box__button">
-            <button class="main-button p-0">Pay now</button>
-        </div>    
-    </div>
-
-
-    <div class="drafts__box col-lg-3 mt-5">
-        <div class="drafts__box__img">
-            <img src="assets/img/Image.png" alt="">
-        </div>
-        <div class="drafts__box__name">
-            <p>Telasi</p>
-        </div>
-        <div class="drafts__box__amount">
-            <span>-130 GEL</span>
-        </div>
-        <div class="drafts__box__button">
-            <button class="main-button p-0">Pay now</button>
-        </div>    
-    </div>
-
-
-    <div class="drafts__box col-lg-3 mt-5">
-        <div class="drafts__box__img">
-            <img src="assets/img/Image.png" alt="">
-        </div>
-        <div class="drafts__box__name">
-            <p>Telasi</p>
-        </div>
-        <div class="drafts__box__amount">
-            <span>-130 GEL</span>
-        </div>
-        <div class="drafts__box__button">
-            <button class="main-button p-0">Pay now</button>
-        </div>    
-    </div>
+    </ng-template>
 
 </div>

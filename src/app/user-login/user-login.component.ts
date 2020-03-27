@@ -16,6 +16,8 @@ export class UserLoginComponent implements OnInit {
   isError: boolean = false; 
   isSubmited: boolean = false; 
 
+  errorMessage: string; 
+
   constructor(
     private router: Router,
     private fb: FormBuilder, 
@@ -25,7 +27,7 @@ export class UserLoginComponent implements OnInit {
     this.userForm = this.fb.group({
       msisdn: [ '', Validators.required ], 
       pin: ['', Validators.required ],
-      languageId: 2
+      languageId: 1
     })
 
    }
@@ -34,10 +36,13 @@ export class UserLoginComponent implements OnInit {
   }
 
 
-  clearError(e) { 
-    console.log(e);
-    
-  }
+  toggleLanguage(language) {
+
+    this.isEngLangActive = !this.isEngLangActive; 
+    // this.translateService.use(language)
+
+  
+  }; 
 
 
   onSubmit(userForm: FormGroup) {
@@ -52,17 +57,25 @@ export class UserLoginComponent implements OnInit {
     this.loginService
         .userLogin(userForm.value)
         .subscribe( data => {
-          
+          // * * * Error * * * *  
           if ( !data['isSuccess'] ) {
 
             this.isError = true; 
             this.isSubmited = false;
+            this.errorMessage = data['errorMessage']
+          // * * * *  Success * * * *  
+
           } else { 
             this.isError = false;
             this.isSubmited = false;
+
+            // * * * Save user info in Local Stroge * * * * 
             localStorage.setItem('sessionId', data['data']['sessionId']);
             localStorage.setItem('msisdn', userForm.value.msisdn );
+            this.isEngLangActive ? localStorage.setItem('languageId', '2') : 
+                                   localStorage.setItem('languageId', '1'); 
 
+            // * * * Navigate to user profile * * * * * 
             this.router.navigate(['/user-profile/home']); 
           }
           console.log(data);

@@ -8,6 +8,29 @@
                 <h2>Short headline</h2>
                 <h1>Join the hype</h1>
             </div>
+            <div class="login__left__lang col-12 d-flex justify-content-center mt-4">
+                <div class="login__left__lang__content col-xs-3 p-0">
+                    <div    *ngIf="!isEngLangActive" 
+                            class="login__left__lang__content__button d-flex align-items-center justify-content-center py-1 px-3" 
+                            (click) = 'toggleLanguage("eng")'
+                            > 
+                            <div class="login__left__lang__content__button__icon mr-2">
+                                <img src="assets/img/usa.svg" alt="usa">
+                            </div>
+                            <span>English</span>
+                            
+                    </div>
+                    <div    *ngIf="isEngLangActive"
+                            class="login__left__lang__content__button d-flex justify-content-center align-items-center py-1 px-3"
+                            (click) = 'toggleLanguage("geo")'
+                            >
+                            <div class="login__left__lang__content__button__icon mr-2">
+                                <img src="assets/img/geo.svg" alt="geo">
+                            </div>
+                            <span>Georgian</span>
+                    </div>
+                </div>
+            </div>
             <form class="login__left__form col-12"  
                   [formGroup]="userForm" 
                   (ngSubmit)="onSubmit(userForm)">
@@ -38,6 +61,9 @@
                                 <img src="assets/img/loading.svg" alt="">
                             </div>
                         </ng-template>
+                </div>
+                <div class="login__left__form__error col-12" >
+                    <p *ngIf="isError"> {{ errorMessage }} </p>
                 </div>
             </form>
             </div>
