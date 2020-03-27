@@ -9,7 +9,7 @@ export class DayNightComponent implements OnInit {
 
   @Output() result: EventEmitter<boolean> = new EventEmitter<boolean>(); 
 
-  isDay: boolean = false; 
+  isDay: boolean = true; 
 
   constructor() { }
 

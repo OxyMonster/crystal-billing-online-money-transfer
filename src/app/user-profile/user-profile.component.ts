@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserProfileComponent implements OnInit {
 
-  isDay: boolean =  false
+  isDay: boolean =  true
 
   constructor() { }
 
