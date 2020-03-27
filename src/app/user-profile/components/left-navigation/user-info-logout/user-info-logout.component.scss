@@ -18,8 +18,14 @@
     }; 
 
     &__info { 
+        
         .user-name { 
             font-weight: bolder;
         }; 
-    }
+        .logout {
+            user-select: none; 
+        }
+        
+    }; 
+
 }

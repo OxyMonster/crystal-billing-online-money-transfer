@@ -2,11 +2,14 @@
     <div class="profile__left-navigation col-md-3 h-100">
         <app-left-navigation></app-left-navigation>
     </div>
-    <div class="col-md-9 profile__content">
-        <div class="profile__content__top-navigation">
+    <div class="col-md-9 profile__content p-0">
+        <div class="profile__content__top-navigation p-2">
             <app-top-navigation></app-top-navigation>
         </div>
         <div class="profile__content__main">
+            <div class="d-flex justify-content-end">
+                <app-day-night></app-day-night>
+            </div>
             <router-outlet></router-outlet>
         </div>
     </div>

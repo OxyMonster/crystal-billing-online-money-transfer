@@ -4,5 +4,24 @@
 
     &__left-navigation { 
         background-color: $light-grey;
+    };
+
+
+    &__content {
+       
+        &__main {
+            padding: 4rem;
+            background: #485563; /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #485563, #29323c); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #485563, #29323c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            border-top-left-radius: .5rem;
+        }; 
+
+        &__top-navigation {
+            background-color: $light-grey;
+        }
+
+
     }
 }
+

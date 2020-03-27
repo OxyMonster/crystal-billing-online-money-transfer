@@ -9,6 +9,7 @@ import { UserProfileDraftsComponent } from './user-profile-drafts/user-profile-d
 import { RouterModule } from '@angular/router';
 import { UserProfileTransactionsComponent } from './user-profile-transactions/user-profile-transactions.component';
 import { UserProfileHomeComponent } from './user-profile-home/user-profile-home.component';
+import { DayNightComponent } from './components/day-night/day-night.component';
 
 
 const COMPONENTS = [ 
@@ -18,7 +19,8 @@ const COMPONENTS = [
   UserInfoLogoutComponent,
   UserProfileDraftsComponent,
   UserProfileTransactionsComponent,
-  UserProfileHomeComponent
+  UserProfileHomeComponent,
+  DayNightComponent
 ]
 
 
