@@ -32,16 +32,34 @@
     display: none;
   }
   
-  .toggle, .toggle:after, .toggle:before, .toggle *, .toggle *:after, .toggle *:before, .toggle + .toggle-button {
+  .toggle, 
+  .toggle:after, 
+  .toggle:before, 
+  .toggle *, 
+  .toggle *:after, 
+  .toggle *:before, 
+  .toggle + .toggle-button {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
   
-  .toggle::-moz-selection, .toggle:after::-moz-selection, .toggle:before::-moz-selection, .toggle *::-moz-selection, .toggle *:after::-moz-selection, .toggle *:before::-moz-selection, .toggle + .toggle-button::-moz-selection {
+  .toggle::-moz-selection, 
+  .toggle:after::-moz-selection, 
+  .toggle:before::-moz-selection, 
+  .toggle *::-moz-selection, 
+  .toggle *:after::-moz-selection, 
+  .toggle *:before::-moz-selection, 
+  .toggle + .toggle-button::-moz-selection {
     background: none;
   }
   
-  .toggle::selection, .toggle:after::selection, .toggle:before::selection, .toggle *::selection, .toggle *:after::selection, .toggle *:before::selection, .toggle + .toggle-button::selection {
+  .toggle::selection, 
+  .toggle:after::selection, 
+  .toggle:before::selection, 
+  .toggle *::selection, .toggle 
+  *:after::selection, 
+  .toggle *:before::selection, 
+  .toggle + .toggle-button::selection {
     background: none;
   }
   
