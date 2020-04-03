@@ -46,5 +46,67 @@ body {
                     transform: translateY(7px);
                 }
 
+}; 
+
+.secondary-button {
+
+
+/* Btn/64PX */
+font-family: Inter;
+font-style: normal;
+font-weight: bold;
+font-size: 32px;
+line-height: 46px;
+/* identical to box height, or 144% */
+
+text-align: center;
+letter-spacing: -0.68px;
+
+/* Black */
+
+color: #3D3D3D;
+border: 1px solid black;
+background-color: transparent;
+padding-left: 2rem;
+padding-right: 2rem;
+/* Inside Auto Layout */
+
+flex: none;
+order: 0;
+align-self: center;
+margin: 10px 0px;
+transition: all 0.3s ease 0s;
+
+user-select: none;
+
+&:hover {
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(7px);
+    border: none;
+};
+
+&:focus {
+    outline: none;
 }
+
+
+}
+
+
+
+
+.default-input { 
+    border: 2px solid black;
+    width: 387px;
+    height: 64px;
+    outline: none;
+    box-shadow: none;
+    padding: .375rem .75rem;
+    &:focus { 
+     box-shadow: 0px 8px 15px rgba(0, 0, 0, .5);
+        
+    }
+  }
 

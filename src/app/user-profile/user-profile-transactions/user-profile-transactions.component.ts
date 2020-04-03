@@ -9,7 +9,9 @@ export class UserProfileTransactionsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { 
+
+  };
+
 
 }

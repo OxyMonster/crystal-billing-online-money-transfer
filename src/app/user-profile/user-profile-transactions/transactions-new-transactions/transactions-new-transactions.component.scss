@@ -1,0 +1,68 @@
+@import 'src/assets/variables'; 
+.transactions {
+
+    &__item {
+        
+        select {
+            background-color: $primary;
+            border: none;
+            color: white;
+            // border: 1px solid $primary;
+            border-left: none;
+            font-weight: bolder;
+            height: 100%;
+            background-origin: border-box;
+            margin-left: 1rem;
+            border-top-right-radius: .5rem;
+            border-bottom-right-radius: .5rem;
+            
+            padding-left: 1rem;
+            padding-right: 1rem;
+            cursor: pointer;
+
+            &:focus {
+                outline: none;
+            }
+
+        }
+        .right-button {
+            background: $primary;
+            border: none;
+            color: white;
+            font-weight: bolder;
+            height: 100%;
+            background-origin: border-box;
+            // border-radius: .5rem;
+            margin-left: 1rem;
+            
+            padding-left: 1rem;
+            padding-right: 1rem;
+            cursor: pointer;
+            
+            &:focus {
+                outline: none;
+            }
+        }; 
+
+        input {
+            padding: 1rem;
+            border: 1px solid black;
+        }
+
+        
+    }
+}; 
+
+
+
+// :host ::ng-deep lottie-player {
+//     .main {
+//         .animation {
+//             svg {
+//                 height: auto !important;
+//             }
+//         }
+//     }
+// }
+
+

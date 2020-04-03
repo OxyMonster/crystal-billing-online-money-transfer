@@ -1,0 +1,59 @@
+<div class="transactions row mt-5 h-100 w-100">
+    <div class="col-md-6">
+        <!-- <img src="assets/img/new-transaction.png" alt="" style="width: 80%;"> -->
+        <lottie-player slot="end" 
+                        autoplay 
+                        loop 
+                        src="/assets/img/rocket.json"
+                        style="height: auto;">
+        </lottie-player>
+    </div>
+    <form [formGroup]="transactionForm"
+          (ngSubmit)="onSubmit(transactionForm)"
+          class="h-100 w-100 col-6">
+    <div class="transactions__item col-12">
+        <input type="text" 
+                placeholder="Reciever phone number"
+                formControlName="transferTo"
+                class="default-input">
+    </div>
+
+    <div class="transactions__item col-12 mt-3 d-flex">
+        <input type="text" 
+               placeholder="Amount"
+               class="default-input">
+        <div class="">
+            <select class="m-0" 
+                    name="currency" 
+                    id="">
+                <!-- <option value="" selected disabled>Currency</option> -->
+                <option value="gel" selected>GEL</option>
+                <option value="usd">USD</option>
+            </select>
+        </div>
+    </div>
+    
+    <div class="transactions__item col-12 mt-3">
+        <input type="text" 
+                placeholder="Description (not required)"
+                formControlName="description"
+                class="default-input">
+    </div>
+    
+    <div class="transactions__item col-12 mt-3 d-flex">
+        <input type="text" placeholder="sms code" class="default-input">
+        <div class="">
+            <button class="right-button">SMS</button>
+        </div>
+    </div>
+    
+    <div class="transactions__buttons col-12 d-flex justify-content-between mt-5">
+        <div class="col-md-6 pl-0">
+            <button class="main-button">Save</button>
+        </div>
+        <div class="col-md-6">
+            <button class="main-button" type="submit">Next</button>
+        </div>
+    </div>
+    </form> 
+</div>   

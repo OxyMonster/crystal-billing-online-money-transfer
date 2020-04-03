@@ -1,1 +1,64 @@
-<p>user-profile-home works!</p>
+<ng-container *ngIf="userData.length > 0; else showLoading" >
+<div class="row home mt-5" *ngFor="let item of userData">
+    
+    
+    <div class="home__info col-md-6">
+        <div class="home__info__headline col-12 mb-4">
+            <h4>Personal Information</h4>
+        </div>
+        <div class="home__info__item col-12">
+            <span>Firstname:</span>
+            <p> {{ item.firstName }} </p>
+        </div>
+
+        <div class="home__info__item col-12">
+            <span>Lastname:</span>
+            <p> {{ item.lastName }} </p>
+        </div>
+
+        <div class="home__info__item col-12">
+            <span>Phone:</span>
+            <p> {{ item.phoneNumber }} </p>
+        </div>
+
+        <div class="home__info__item col-12">
+            <span>Birth date:</span>
+            <p> {{ item.birthDate }} </p>
+        </div>
+    </div>
+
+    <div class="home__wallets col-md-6" >
+        <div class="home__wallets__title mb-4">
+            <h4>Wallets</h4>
+        </div>
+        <div class="home__wallets__name col-12 mb-5" *ngFor="let wallet of item.wallets">
+            <div class="home__wallets__item col-12">
+                <span>Wallet name:</span>
+                <p> {{ wallet.walletName }} </p>
+            </div>
+            <div class="home__wallets__item col-12">
+                <span>Wallet type:</span>
+                <p> {{ wallet.walletTypeName }} </p>
+            </div>
+            <div class="home__wallets__item col-12" *ngIf="wallet.balanceCurrent !== null">
+                <span>Balance current:</span>
+                <p> {{ wallet.balanceCurrent  + wallet.currencyName}} </p>
+            </div>
+            <div class="home__wallets__item col-12" *ngIf="wallet.balanceAvailable !== null">
+                <span> Balance available:</span>
+                <p> {{ wallet.balanceAvailable + wallet.currencyName }} </p>
+            </div>
+        </div>
+    </div>
+    
+   
+
+</div>
+</ng-container>
+
+<ng-template #showLoading>
+    <div class="drafts__loading col-12 d-flex justify-content-center align-items-center">
+        <app-loading-spinner></app-loading-spinner>
+    </div>
+</ng-template>
+

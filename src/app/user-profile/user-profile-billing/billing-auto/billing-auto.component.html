@@ -1,0 +1,28 @@
+<div class="row drafts" >
+
+    <ng-container *ngIf="autosList.length > 0; else showLoading">
+
+        <div class="drafts__box col-lg-3 mt-5" *ngFor="let item of autosList">
+            <div class="drafts__box__img">
+                <img src="assets/img/Image.png" alt="">
+            </div>
+            <div class="drafts__box__name">
+                <p> {{ item.title }} </p>
+            </div>
+            <div class="drafts__box__amount">
+                <span>- {{ item.logoIcon }} </span>
+            </div>  
+            <div class="drafts__box__button">
+                <button class="main-button p-0">Select</button>
+            </div>    
+        </div>
+
+    </ng-container>
+
+    <ng-template #showLoading>
+        <div class="drafts__loading col-12 d-flex justify-content-center align-items-center">
+            <app-loading-spinner></app-loading-spinner>
+        </div>
+    </ng-template>
+
+</div>

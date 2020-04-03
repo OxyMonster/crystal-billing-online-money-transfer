@@ -1,0 +1,100 @@
+@import 'src/assets/variables'; 
+
+.transactions {
+    color: black !important;
+    &__drafts {
+        &__content {
+            width: 90%;
+            background-color: $primary;
+            border-radius: .5rem;
+            height: 36rem;
+            box-shadow: 0px 8px 15px rgba(197, 23, 23, 0.637);
+            padding: 1rem;
+            margin-bottom: 2rem;
+            
+
+            &__logo {
+                display: flex;
+                justify-content: center;
+                height: 17rem;
+                width: 100%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }; 
+
+            &__title {
+                text-align: center;
+                color: $black;
+                user-select: none;
+
+                h4 {
+                    font-weight: bolder;
+
+                }
+            }; 
+
+            &__text {
+                color: $black;
+                user-select: none;
+                display: flex;
+                flex-wrap: wrap;
+                height: 8rem;
+            }
+
+            &__button {
+                text-align: center;
+            }
+        }
+    }; 
+
+    &__new {
+        &__content {
+            width: 90%;
+            background-color: $secondary;
+            // border: 1px solid $black;
+            border-radius: .5rem;
+            height: 36rem;
+            box-shadow: 0px 8px 15px rgba(135, 148, 22, 0.664);
+            padding: 1rem;
+
+        
+            
+
+            &__logo {
+                display: flex;
+                justify-content: center;
+                height: 17rem;
+                width: 100%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }; 
+
+            &__title {
+                text-align: center;
+                user-select: none;
+                color: $black;
+                h4 {
+                    font-weight: bolder;
+
+                }
+            }; 
+
+            &__text {
+                color: $black;
+                user-select: none;
+                height: 8rem;
+
+            }
+
+            &__button {
+                text-align: center;
+            }
+        }
+    }
+}
