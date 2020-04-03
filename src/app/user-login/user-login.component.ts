@@ -14,7 +14,7 @@ export class UserLoginComponent implements OnInit {
   isEngLangActive: boolean = false; 
 
   isError: boolean = false; 
-  isSubmited: boolean = false; 
+  isLoading: boolean = false; 
 
   errorMessage: string; 
 
@@ -47,7 +47,7 @@ export class UserLoginComponent implements OnInit {
 
   onSubmit(userForm: FormGroup) {
 
-    this.isSubmited = true; 
+    this.isLoading = true; 
     this.isError = false;
 
       //  * * * Set Language * * * 
@@ -61,13 +61,13 @@ export class UserLoginComponent implements OnInit {
           if ( !data['isSuccess'] ) {
 
             this.isError = true; 
-            this.isSubmited = false;
+            this.isLoading = false;
             this.errorMessage = data['errorMessage']
           // * * * *  Success * * * *  
 
           } else { 
             this.isError = false;
-            this.isSubmited = false;
+            this.isLoading = false;
 
             // * * * Save user info in Local Stroge * * * * 
             localStorage.setItem('sessionId', data['data']['sessionId']);
