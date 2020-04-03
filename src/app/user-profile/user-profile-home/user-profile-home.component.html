@@ -6,7 +6,10 @@
         <div class="home__info__headline col-12 mb-4">
             <h4>Personal Information</h4>
         </div>
-        <div class="home__info__item col-12">
+        <div class="home__info__logo col-12">
+            <img src="assets/img/about-me.svg" alt="">
+        </div>
+        <div class="home__info__item col-12 mt-4">
             <span>Firstname:</span>
             <p> {{ item.firstName }} </p>
         </div>
@@ -31,7 +34,10 @@
         <div class="home__wallets__title mb-4">
             <h4>Wallets</h4>
         </div>
-        <div class="home__wallets__name col-12 mb-5" *ngFor="let wallet of item.wallets">
+        <div class="home__wallets__logo col-12">
+            <img src="assets/img/money.svg" alt="">
+        </div>
+        <div class="home__wallets__name col-12 mb-5 mt-4" *ngFor="let wallet of item.wallets">
             <div class="home__wallets__item col-12">
                 <span>Wallet name:</span>
                 <p> {{ wallet.walletName }} </p>
