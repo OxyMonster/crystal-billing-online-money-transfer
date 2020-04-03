@@ -47,7 +47,7 @@
 
     &__wallets {
         &__name {
-            // border-bottom: 2px solid black;
+            border-bottom: 2px solid;
         }
         &__title {
             h4 {
@@ -67,6 +67,8 @@
         &__logo {
             width: 30rem;
             height: 18rem;
+            border-bottom: 2px solid;
+            padding-bottom: 1rem;
             img {
                 width: 100%;
                 height: 100%;
@@ -87,4 +89,9 @@
             }
         }; 
     }
-}
+}; 
+
+
+// button {
+//     white-space: nowrap;
+// }

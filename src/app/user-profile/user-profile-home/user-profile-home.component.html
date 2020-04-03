@@ -2,7 +2,7 @@
 <div class="row home mt-5" *ngFor="let item of userData">
     
     
-    <div class="home__info col-md-6">
+    <div class="home__info col-md-6 mb-5">
         <div class="home__info__headline col-12 mb-4">
             <h4>Personal Information</h4>
         </div>
@@ -28,16 +28,21 @@
             <span>Birth date:</span>
             <p> {{ item.birthDate }} </p>
         </div>
+
+        <div class="home__buttons d-flex justify-content-center mt-3">
+            <button class="main-button" style="width: auto;">Change Password</button>
+        </div>
     </div>
 
     <div class="home__wallets col-md-6" >
         <div class="home__wallets__title mb-4">
             <h4>Wallets</h4>
         </div>
-        <div class="home__wallets__logo col-12">
+        <div class="home__wallets__logo col-12 mb-4">
             <img src="assets/img/money.svg" alt="">
         </div>
-        <div class="home__wallets__name col-12 mb-5 mt-4" *ngFor="let wallet of item.wallets">
+        
+        <div class="home__wallets__name col-12 mb-4 pb-3" *ngFor="let wallet of item.wallets">
             <div class="home__wallets__item col-12">
                 <span>Wallet name:</span>
                 <p> {{ wallet.walletName }} </p>
@@ -55,6 +60,16 @@
                 <p> {{ wallet.balanceAvailable + wallet.currencyName }} </p>
             </div>
         </div>
+
+        <div class="home__wallets__buttons col-12 d-flex justify-content-between">
+            <div class="col-6">
+                <button class="main-button" style="width: auto;" (click) = 'routeToSelectedCategory("bills")'> Pay Bills </button>
+            </div>
+            <div class="col-6">
+                <button class="main-button" style="width: auto;" (click) = 'routeToSelectedCategory("transactions")'> Send Money </button>
+            </div>
+        </div>
+
     </div>
     
    

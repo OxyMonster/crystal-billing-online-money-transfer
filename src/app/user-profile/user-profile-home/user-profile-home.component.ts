@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserProfileHomeService } from './user-profile-home.service';
 import { UtileService } from 'src/app/shared/services/utile.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-profile-home',
@@ -13,7 +14,8 @@ export class UserProfileHomeComponent implements OnInit {
 
   constructor(
     private homeService: UserProfileHomeService,
-    private utileService: UtileService
+    private utileService: UtileService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -42,6 +44,17 @@ export class UserProfileHomeComponent implements OnInit {
         }, err => console.log(err) )
   }; 
 
+
+  routeToSelectedCategory(categoryName: string) {
+
+    switch ( categoryName ) {
+      case 'bills' : this.router.navigate(['/user-profile/drafts/categories'])
+        break;
+      case 'transactions' : this.router.navigate(['/user-profile/transactions/categories']); 
+        break; 
+        
+    }; 
+  }; 
 
 
 }

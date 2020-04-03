@@ -1,6 +1,19 @@
 @import 'src/assets/variables'; 
 .transactions {
-
+    &__title {
+        h4 {
+            text-align: center;
+            text-decoration: none;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 1.875rem;
+            line-height: 2.75rem;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    }
     &__item {
         
         select {
