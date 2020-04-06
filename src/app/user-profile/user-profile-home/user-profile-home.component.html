@@ -1,7 +1,7 @@
 <ng-container *ngIf="userData.length > 0; else showLoading" >
-<div class="row home mt-5" *ngFor="let item of userData">
+<div class="row home mt-5 w-100 h-100" *ngFor="let item of userData">
     
-    
+     
     <div class="home__info col-md-6 mb-5">
         <div class="home__info__headline col-12 mb-4">
             <h4>Personal Information</h4>
@@ -29,8 +29,8 @@
             <p> {{ item.birthDate }} </p>
         </div>
 
-        <div class="home__buttons d-flex justify-content-center mt-3">
-            <button class="main-button" style="width: auto;">Change Password</button>
+        <div class="home__info__buttons d-flex justify-content-center mt-3">
+            <button class="main-button">Change Password</button>
         </div>
     </div>
 
@@ -63,13 +63,13 @@
             </div>
         </div>
 
-        <div class="home__wallets__buttons col-12 d-flex justify-content-between">
-            <div class="col-6">
+        <div class="home__wallets__buttons col-12 row justify-content-between">
+            <!-- <div class="col-md-6 mb-4">
                 <button class="main-button" style="width: auto;" (click) = 'routeToSelectedCategory("bills")'> Pay Bills </button>
             </div>
-            <div class="col-6">
+            <div class="col-md-6">
                 <button class="main-button" style="width: auto;" (click) = 'routeToSelectedCategory("transactions")'> Send Money </button>
-            </div>
+            </div> -->
         </div>
 
     </div>
