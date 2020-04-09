@@ -6,14 +6,14 @@
             <div class="drafts__box__img">
                 <img src="assets/img/Image.png" alt="">
             </div>
-            <div class="drafts__box__name">
+            <div class="drafts__box__name mt-3">
                 <p> {{ item.title }} </p>
             </div>
             <div class="drafts__box__amount">
-                <span> jdlasjdslkad </span>
+                <!-- <span> jdlasjdslkad </span> -->
             </div>  
-            <div class="drafts__box__button">
-                <button class="main-button p-0">Select</button>
+            <div class="drafts__box__button m-0">
+                <button class="main-button p-0" (click) = 'openModal(modalContent, item.title, item.name)'>Select</button>
             </div>    
         </div>
 
@@ -22,6 +22,27 @@
     <ng-template #showLoading>
         <div class="drafts__loading col-12 d-flex justify-content-center align-items-center">
             <app-loading-spinner></app-loading-spinner>
+        </div>
+    </ng-template>
+
+
+    <ng-template #modalContent>
+        <app-modal [title] = 'modalTitle'></app-modal>
+        <div class="modal-body">
+            <!-- * * * Banks * * *  -->
+            <app-banks *ngIf="categories.banks"
+                        [allData] = 'financeChildList'>
+            </app-banks>
+            <!-- * * * Electornic Money * * *  -->
+            <app-electronic-money *ngIf="categories.elMoney"></app-electronic-money>
+            <!-- * * * Electornic service * * *  -->
+            <app-electronic-services-websites *ngIf="categories.elServices"></app-electronic-services-websites>
+            <!-- * * * Insurance  * * *  -->
+            <app-insurance-services *ngIf="categories.insuranceServices"
+                                    [allData] = 'financeChildList'>
+            </app-insurance-services>
+            <!-- * * * Microfinance organizations * * *  -->
+            <app-microfinance-organizations *ngIf="categories.microFinOrganizations"></app-microfinance-organizations>
         </div>
     </ng-template>
 

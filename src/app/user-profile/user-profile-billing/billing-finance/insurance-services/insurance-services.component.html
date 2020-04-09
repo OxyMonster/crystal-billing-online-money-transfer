@@ -1,0 +1,28 @@
+<div class="row drafts pb-4" >
+
+    <ng-container *ngIf="insurancesList.length > 0; else showLoading">
+
+        <div class="drafts__box col-lg-3 mt-5" *ngFor="let item of insurancesList">
+            <div class="drafts__box__img d-flex justify-content-center">
+                <img src="assets/img/Image.png" alt="">
+            </div>
+            <div class="drafts__box__name mt-3" style="text-align: center;">
+                <p> {{ item.title }} </p>
+            </div>
+            <div class="drafts__box__amount">
+                <!-- <span> jdlasjdslkad </span> -->
+            </div>  
+            <div class="drafts__box__button d-flex justify-content-center">
+                <button class="main-button p-0">Select</button>
+            </div>    
+        </div>
+
+    </ng-container>
+
+    <ng-template #showLoading>
+        <div class="drafts__loading col-12 d-flex justify-content-center align-items-center">
+            <app-loading-spinner></app-loading-spinner>
+        </div>
+    </ng-template>
+
+</div>

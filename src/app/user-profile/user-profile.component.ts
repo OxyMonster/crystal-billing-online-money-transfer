@@ -18,6 +18,8 @@ export class UserProfileComponent implements OnInit {
 
   getisDayOrNight(e: boolean) {
     this.isDay = e;
+
+    this.isDay ? localStorage.setItem('mode', 'day') : localStorage.setItem('mode', 'night'); 
   }
 
 }

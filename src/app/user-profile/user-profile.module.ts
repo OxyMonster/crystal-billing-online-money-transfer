@@ -24,6 +24,7 @@ import { DraftsFinanceComponent } from './user-profile-billing/billing-finance/b
 import { DraftsTelecomsComponent } from './user-profile-billing/billing-telecoms/billing-telecoms.component';
 import { DraftsUtilitiesComponent } from './user-profile-billing/billing-utilities/billing-utilities.component';
 import { UserProfileTransactionsModule } from './user-profile-transactions/user-profile-transactions.module';
+import { UserProfileBillingModule } from './user-profile-billing/user-profile-billing.module';
 
 
 const COMPONENTS = [ 
@@ -47,14 +48,15 @@ const COMPONENTS = [
   DraftsCategoriesComponent,
 ]
 
-
+  
 @NgModule({
   declarations: COMPONENTS,
   imports: [
     CommonModule,
+    SharedModule,
+    UserProfileBillingModule,
     RouterModule,
     UserProfileRoutingModule,
-    SharedModule,
     HttpClientModule,
     UserProfileTransactionsModule,
   ], 

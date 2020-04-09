@@ -3,9 +3,10 @@ import { Subject } from 'rxjs';
 import { DraftsService } from '../drafts.service';
 import { UtileService } from 'src/app/shared/services/utile.service';
 import { takeUntil } from 'rxjs/operators';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-drafts-auto',
+  selector: 'app-billing-auto',
   templateUrl: './billing-auto.component.html',
   styleUrls: ['./billing-auto.component.scss', '../user-profile-drafts.component.scss']
 }) 
@@ -14,7 +15,11 @@ export class DraftsAutoComponent implements OnInit {
 
   languageId: string; 
   billersAlldata: any[] = []; 
-  autosList: any[] = [];  
+  autosList: any[] = [];
+  autosChildList: any[];   
+   
+  modalTitle: string; 
+  isParkingActive: boolean = false; 
 
 
   destroy: Subject<void> = new Subject<void>(); 
@@ -22,6 +27,7 @@ export class DraftsAutoComponent implements OnInit {
   constructor(
     private draftService: DraftsService,
     private utileService: UtileService,
+    private modalService: NgbModal
   ) { }
 
   ngOnInit(): void {
@@ -44,7 +50,13 @@ export class DraftsAutoComponent implements OnInit {
 
                   if (item['name'] === 'b_auto' ) {
                     this.autosList = item['children']; 
-                  }
+                    
+                    this.autosList.map( item => {
+                      this.autosChildList = item['children']; 
+                      
+                    })
+                  
+                  }; 
 
                  }); 
                 
@@ -53,6 +65,18 @@ export class DraftsAutoComponent implements OnInit {
         
                }, err => console.log(err) )
   }; 
+
+  openModal(content, modalTitle:string, selectedCat: string) {
+    
+    // * * * Display selected Category * * * *
+    selectedCat === 'ba_parking' ? this.isParkingActive = true : this.isParkingActive = false; 
+    //* * * Modal Options * * * * 
+    this.modalTitle = modalTitle; 
+    this.modalService.open(content, { size: 'xl' });
+
+  };
+
+  
 
 
 }

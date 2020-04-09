@@ -17,6 +17,7 @@ export class DraftsCategoriesComponent implements OnInit {
   billersAlldata: any[] = []; 
   billersCategoryList: any[] = []; 
 
+  dayNightMode: string; 
 
   destroy: Subject<void> = new Subject<void>(); 
 
@@ -28,9 +29,12 @@ export class DraftsCategoriesComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.dayNightMode = localStorage.getItem('mode'); 
+    
     this.languageId = this.utileService.getUserLanguage();
 
     this.getBillers(); 
+
 
   };
 

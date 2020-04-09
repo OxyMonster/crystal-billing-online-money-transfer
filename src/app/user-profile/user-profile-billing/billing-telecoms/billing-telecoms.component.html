@@ -6,14 +6,14 @@
             <div class="drafts__box__img">
                 <img src="assets/img/Image.png" alt="">
             </div>
-            <div class="drafts__box__name">
+            <div class="drafts__box__name mt-3">
                 <p> {{ item.title }} </p>
             </div>
-            <div class="drafts__box__amount">
-                <span> jdlasjdslkad </span>
+            <div class="drafts__box__amount m-0">
+                <!-- <span> jdlasjdslkad </span> -->
             </div>  
             <div class="drafts__box__button">
-                <button class="main-button p-0">Select</button>
+                <button class="main-button p-0" (click) = 'openModal(modalContent, item.title, item.name)'>Select</button>
             </div>    
         </div>
 
@@ -24,5 +24,33 @@
             <app-loading-spinner></app-loading-spinner>
         </div>
     </ng-template>
+
+
+    <ng-template #modalContent>
+        <app-modal [title] = 'modalTitle'></app-modal>
+        <div class="modal-body">
+            <app-telecoms-companies *ngIf="categories.companies"
+                                    [allData] = 'telecomsChildList'>
+            </app-telecoms-companies>
+
+            <app-telecoms-internet *ngIf="categories.internet"
+                                   [allData] = 'telecomsChildList'>
+            </app-telecoms-internet>
+            
+            <app-telecoms-phone-fixed *ngIf="categories.phoneFixed"
+                                      [allData] = 'telecomsChildList'>
+            </app-telecoms-phone-fixed>
+            
+            <app-telecoms-phone-mobile *ngIf="categories.phoneMobile"
+                                       [allData] = 'telecomsChildList'>
+            </app-telecoms-phone-mobile>
+            
+            <app-television *ngIf="categories.tv"
+                            [allData] = 'telecomsChildList'>
+            </app-television>
+        
+        </div>
+    </ng-template>
+
 
 </div>

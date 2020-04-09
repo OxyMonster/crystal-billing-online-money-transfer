@@ -13,7 +13,7 @@
                 <!-- <span>- {{ item.logoIcon }} </span> -->
             </div>  
             <div class="drafts__box__button">
-                <button class="main-button p-0">Select</button>
+                <button class="main-button p-0" (click) = 'openModal(modalContent, item.title, item.name)'>Select</button>
             </div>    
         </div>
 
@@ -23,6 +23,20 @@
         <div class="drafts__loading col-12 d-flex justify-content-center align-items-center">
             <app-loading-spinner></app-loading-spinner>
         </div>
+    </ng-template>
+
+
+    <!-- * * * * * Modal * * * * *  -->
+    <ng-template #modalContent>
+            <app-modal [title] = 'modalTitle'></app-modal>
+            
+            <app-fines *ngIf="!isParkingActive"
+                        [finesData] = 'autosChildList'>
+            </app-fines>
+            
+            <app-parking *ngIf="isParkingActive"
+                         [parkingData] = 'autosChildList'>
+            </app-parking>         
     </ng-template>
 
 </div>

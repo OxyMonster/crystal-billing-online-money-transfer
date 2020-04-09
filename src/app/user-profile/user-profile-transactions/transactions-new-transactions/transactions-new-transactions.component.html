@@ -15,7 +15,7 @@
           (ngSubmit)="onSubmit(transactionForm)"
           class="h-100 w-100 col-6">
     <div class="transactions__item col-12">
-        <input type="text" 
+        <input  type="text" 
                 placeholder="Reciever phone number"
                 formControlName="transferTo"
                 class="default-input">
@@ -29,7 +29,6 @@
             <select class="m-0" 
                     name="currency" 
                     id="">
-                <!-- <option value="" selected disabled>Currency</option> -->
                 <option value="gel" selected>GEL</option>
                 <option value="usd">USD</option>
             </select>
@@ -38,9 +37,9 @@
     
     <div class="transactions__item col-12 mt-3">
         <input type="text" 
-                placeholder="Description (not required)"
-                formControlName="description"
-                class="default-input">
+               placeholder="Description (not required)"
+               formControlName="description"
+               class="default-input">
     </div>
     
     <div class="transactions__item col-12 mt-3 d-flex">
