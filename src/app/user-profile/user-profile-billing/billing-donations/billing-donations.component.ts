@@ -3,6 +3,7 @@ import { Subject } from 'rxjs';
 import { UtileService } from 'src/app/shared/services/utile.service';
 import { DraftsService } from '../drafts.service';
 import { takeUntil } from 'rxjs/operators';
+import { faHandHoldingHeart, faPray, faPeace } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-drafts-donations',
@@ -11,7 +12,9 @@ import { takeUntil } from 'rxjs/operators';
 })
 export class DraftsDonationsComponent implements OnInit {
 
-
+  faHandHoldingHeart = faHandHoldingHeart; 
+  faPray = faPray; 
+  faPeace = faPeace;
 
   languageId: string; 
   billersAlldata: any[] = []; 

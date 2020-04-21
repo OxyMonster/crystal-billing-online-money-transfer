@@ -4,6 +4,7 @@ import { DraftsService } from '../drafts.service';
 import { UtileService } from 'src/app/shared/services/utile.service';
 import { takeUntil } from 'rxjs/operators';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { faPhone, faMobile,faTv, faWifi, faBriefcase } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -12,6 +13,17 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./billing-telecoms.component.scss', '../user-profile-drafts.component.scss']
 })
 export class DraftsTelecomsComponent implements OnInit {
+
+  //  * * * Icons * * * 
+  
+  faPhone = faPhone; 
+  faMobile = faMobile; 
+  faTv = faTv; 
+  faWifi = faWifi; 
+  faBriefcase = faBriefcase;
+
+  //  * * * / * * * 
+
 
   languageId: string; 
   billersAlldata: any[] = []; 

@@ -4,7 +4,7 @@
 
         <div class="drafts__box col-lg-3 mt-5" *ngFor="let item of mobilesList">
             <div class="drafts__box__img d-flex justify-content-center">
-                <img src="assets/img/Image.png" alt="">
+                <img [src]="'data:image/jpeg;base64,'+ item.logoIcon" alt="">
             </div>
             <div class="drafts__box__name mt-3" style="text-align: center;">
                 <p> {{ item.title }} </p>

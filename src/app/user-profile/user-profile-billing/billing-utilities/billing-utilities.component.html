@@ -4,7 +4,11 @@
 
         <div class="drafts__box col-lg-3 mt-5" *ngFor="let item of utilitiesList">
             <div class="drafts__box__img">
-                <img src="assets/img/Image.png" alt="">
+                <fa-icon *ngIf="item.name === 'bu_gas'" [icon] = 'faBurn'></fa-icon>
+                <fa-icon *ngIf="item.name === 'bu_electricity'" [icon] = 'faBolt'></fa-icon>
+                <fa-icon *ngIf="item.name === 'bu_water'" [icon] = 'faHandHoldingWater'></fa-icon>
+                <fa-icon *ngIf="item.name === 'bu_trash'" [icon] = 'faTrash'></fa-icon>
+                
             </div>
             <div class="drafts__box__name">
                 <p> {{ item.title }} </p>
@@ -13,7 +17,7 @@
                 <span> jdlasjdslkad </span>
             </div>  
             <div class="drafts__box__button">
-                <button class="main-button p-0">Select</button>
+                <button class="main-button p-0" (click) = 'openModal(modalContent, item.title, item.name)'>Select</button>
             </div>    
         </div>
 
@@ -25,4 +29,23 @@
         </div>
     </ng-template>
 
+
+    <ng-template #modalContent>
+        <app-modal [title] = 'modalTitle'></app-modal>
+        <div class="modal-body">
+            <app-utilities-electricity *ngIf="categories.electricity"
+                                        [allData] = 'utilsChildList'>
+            </app-utilities-electricity>
+            <app-utilities-gas *ngIf="categories.gas"
+                                [allData] = 'utilsChildList'>
+            </app-utilities-gas>
+            <app-utilities-water *ngIf="categories.water" 
+                                 [allData] = 'utilsChildList'>
+            </app-utilities-water>
+            <app-utilities-waste-removal *ngIf="categories.wasteRemoval"
+                                         [allData] = 'utilsChildList'>
+            </app-utilities-waste-removal>
+        </div>
+
+    </ng-template>
 </div>

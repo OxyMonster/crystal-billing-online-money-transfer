@@ -4,6 +4,7 @@ import { DraftsService } from '../drafts.service';
 import { UtileService } from 'src/app/shared/services/utile.service';
 import { takeUntil } from 'rxjs/operators';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { faParking, faGavel } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-billing-auto',
@@ -12,11 +13,16 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 }) 
 export class DraftsAutoComponent implements OnInit {
 
+  faParking = faParking; 
+  faGavel = faGavel;
+
 
   languageId: string; 
   billersAlldata: any[] = []; 
   autosList: any[] = [];
-  autosChildList: any[];   
+  autosChildList: any[]; 
+     
+
    
   modalTitle: string; 
   isParkingActive: boolean = false; 

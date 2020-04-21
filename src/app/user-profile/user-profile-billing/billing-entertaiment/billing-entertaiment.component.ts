@@ -3,6 +3,9 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { UtileService } from 'src/app/shared/services/utile.service';
 import { DraftsService } from '../drafts.service';
+import { faDice, faDiceD20 } from '@fortawesome/free-solid-svg-icons';
+
+
 
 @Component({
   selector: 'app-billing-entertaiment',
@@ -10,6 +13,9 @@ import { DraftsService } from '../drafts.service';
   styleUrls: ['./billing-entertaiment.component.scss', '../user-profile-drafts.component.scss']
 })
 export class DraftsEntertaimentComponent implements OnInit {
+
+  faDice = faDice;
+  faDiceD20 = faDiceD20;
 
 
   languageId: string; 

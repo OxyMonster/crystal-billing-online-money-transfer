@@ -3,6 +3,9 @@ import { Subject } from 'rxjs';
 import { DraftsService } from '../drafts.service';
 import { UtileService } from 'src/app/shared/services/utile.service';
 import { takeUntil } from 'rxjs/operators';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { faBolt, faBurn, faHandHoldingWater, faTrash } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-drafts-utilities',
@@ -11,9 +14,27 @@ import { takeUntil } from 'rxjs/operators';
 })
 export class DraftsUtilitiesComponent implements OnInit {
 
+  //  * * * Icons * * * *
+  faBolt = faBolt;
+  faBurn = faBurn; 
+  faHandHoldingWater = faHandHoldingWater; 
+  faTrash = faTrash; 
+
+  //  * * * / * * * 
   languageId: string; 
   billersAlldata: any[] = []; 
   utilitiesList: any[] = [];  
+
+  modalTitle: string; 
+
+  categories = {
+    electricity: false, 
+    gas: false, 
+    wasteRemoval: false, 
+    water: false
+  }; 
+
+  utilsChildList: any[] = []; 
 
 
   destroy: Subject<void> = new Subject<void>(); 
@@ -21,6 +42,7 @@ export class DraftsUtilitiesComponent implements OnInit {
   constructor(
     private draftService: DraftsService,
     private utileService: UtileService,
+    private modalService: NgbModal
   ) { }
 
   ngOnInit(): void {
@@ -43,6 +65,9 @@ export class DraftsUtilitiesComponent implements OnInit {
 
                   if (item['name'] === 'b_utilities' ) {
                     this.utilitiesList = item['children']; 
+                    this.utilsChildList = this.utilitiesList.map(item => item['children']); 
+                    console.log(this.utilsChildList);
+                    
                   }; 
 
                  }); 
@@ -52,6 +77,36 @@ export class DraftsUtilitiesComponent implements OnInit {
         
                }, err => console.log(err) )
   }; 
+
+
+  openModal(modalContent: any, modalTitle: string, selectedCat: string) {
+
+    this.modalTitle = modalTitle; 
+    this.modalService.open(modalContent, { size: 'xl' }); 
+
+
+    for ( const property in this.categories ) {
+      
+      this.categories[property] = false; 
+    
+    }; 
+ 
+    switch (selectedCat) {
+      case 'bu_gas' : this.categories.gas = true; 
+        break;
+      case 'bu_electricity' : this.categories.electricity = true;
+        break; 
+      case 'bu_water' : this.categories.water = true; 
+        break; 
+      case 'bu_trash' : this.categories.wasteRemoval = true; 
+
+    }; 
+
+
+
+
+  }
+
 
 
 }

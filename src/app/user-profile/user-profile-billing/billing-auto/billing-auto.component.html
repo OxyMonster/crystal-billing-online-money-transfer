@@ -4,10 +4,11 @@
 
         <div class="drafts__box col-lg-3 mt-5" *ngFor="let item of autosList">
             <div class="drafts__box__img">
-                <img src="assets/img/Image.png" alt="">
+                <fa-icon *ngIf="item.name === 'ba_parking'" [icon] = 'faParking'></fa-icon>
+                <fa-icon *ngIf="item.name === 'ba_fines'" [icon] = 'faGavel'></fa-icon>
             </div>
             <div class="drafts__box__name">
-                <p> {{ item.title }} </p>
+                <p> {{ item.title }} </p>                
             </div>
             <div class="drafts__box__amount">
                 <!-- <span>- {{ item.logoIcon }} </span> -->

@@ -3,6 +3,8 @@ import { Subject } from 'rxjs';
 import { DraftsService } from '../drafts.service';
 import { UtileService } from 'src/app/shared/services/utile.service';
 import { takeUntil } from 'rxjs/operators';
+import { faUniversity, faSchool, faUsers, faBaby } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-drafts-education',
@@ -10,7 +12,14 @@ import { takeUntil } from 'rxjs/operators';
   styleUrls: ['./billing-education.component.scss', '../user-profile-drafts.component.scss']
 })
 export class DraftsEducationComponent implements OnInit {
-  
+
+  faUniversity = faUniversity; 
+  faSchool = faSchool;
+  faUsers = faUsers; 
+  faBaby = faBaby
+
+
+
   languageId: string; 
   billersAlldata: any[] = []; 
   educationsList: any[] = [];  

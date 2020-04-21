@@ -1,8 +1,8 @@
 <div class="row drafts pb-4" >
 
-    <ng-container *ngIf="televisionsList.length > 0; else showLoading">
+    <ng-container *ngIf="allTrashData.length > 0; else showLoading">
 
-        <div class="drafts__box col-lg-3 mt-5" *ngFor="let item of televisionsList">
+        <div class="drafts__box col-lg-3 mt-5" *ngFor="let item of allTrashData">
             <div class="drafts__box__img d-flex justify-content-center">
                 <img [src]="'data:image/jpeg;base64,'+ item.logoIcon" alt="">
             </div>

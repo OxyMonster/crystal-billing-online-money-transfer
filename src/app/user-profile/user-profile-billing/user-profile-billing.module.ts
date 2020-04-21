@@ -12,6 +12,13 @@ import { TelecomsInternetComponent } from './billing-telecoms/telecoms-internet/
 import { TelecomsPhoneFixedComponent } from './billing-telecoms/telecoms-phone-fixed/telecoms-phone-fixed.component';
 import { TelecomsPhoneMobileComponent } from './billing-telecoms/telecoms-phone-mobile/telecoms-phone-mobile.component';
 import { TelecomsTelevisionComponent } from './billing-telecoms/telecoms-television/telecoms-television.component';
+import { TransportationShippingComponent } from './billing-transportation/transportation-shipping/transportation-shipping.component';
+import { TransportationTravelComponent } from './billing-transportation/transportation-travel/transportation-travel.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { UtilitiesElectricityComponent } from './billing-utilities/utilities-electricity/utilities-electricity.component';
+import { UtilitiesGasComponent } from './billing-utilities/utilities-gas/utilities-gas.component';
+import { UtilitiesWasteRemovalComponent } from './billing-utilities/utilities-waste-removal/utilities-waste-removal.component';
+import { UtilitiesWaterComponent } from './billing-utilities/utilities-water/utilities-water.component';
 
 const COMPONENTS = [
   FinesComponent,
@@ -25,13 +32,20 @@ const COMPONENTS = [
   TelecomsInternetComponent,
   TelecomsPhoneFixedComponent,
   TelecomsPhoneMobileComponent,
-  TelecomsTelevisionComponent
+  TelecomsTelevisionComponent,
+  TransportationShippingComponent,
+  TransportationTravelComponent,
+  UtilitiesElectricityComponent,
+  UtilitiesGasComponent,
+  UtilitiesWasteRemovalComponent,
+  UtilitiesWaterComponent, 
 ]
 
 @NgModule({
   declarations: COMPONENTS,
   imports: [
-    CommonModule  
+    CommonModule,
+    SharedModule 
   ],
   exports: COMPONENTS
 })

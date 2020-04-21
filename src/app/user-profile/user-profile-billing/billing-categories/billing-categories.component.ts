@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { UtileService } from 'src/app/shared/services/utile.service';
 import { DraftsService } from '../drafts.service';
 import { takeUntil } from 'rxjs/operators';
+import { faHome, faPuzzlePiece ,faPlug, faGamepad, faGlobeAmericas, faCar, faWallet, faGraduationCap, faDonate } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-drafts-categories',
@@ -21,6 +22,20 @@ export class DraftsCategoriesComponent implements OnInit {
 
   destroy: Subject<void> = new Subject<void>(); 
 
+  // * * * Icons * * * * 
+
+  faHome = faHome;
+  faPlug = faPlug; 
+  faGamepad= faGamepad; 
+  faGlobeAmericas = faGlobeAmericas;
+  faCar = faCar; 
+  faWallet = faWallet; 
+  faGraduationCap = faGraduationCap;
+  faDonate = faDonate;
+  faPuzzlePiece = faPuzzlePiece;
+
+
+
   constructor(
     private draftService: DraftsService,
     private utileService: UtileService,
@@ -37,6 +52,7 @@ export class DraftsCategoriesComponent implements OnInit {
 
 
   };
+  
 
   getBillers() {    
     return this.draftService

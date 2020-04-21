@@ -4,7 +4,13 @@
 
         <div class="drafts__box col-lg-3 mt-5" *ngFor="let item of telecomsList">
             <div class="drafts__box__img">
-                <img src="assets/img/Image.png" alt="">
+                <fa-icon *ngIf="item.name === 'bt_phone_fixed'" [icon] = 'faPhone'></fa-icon>
+                <fa-icon *ngIf="item.name === 'bt_phone_mobile'" [icon] = 'faMobile'></fa-icon>
+                <fa-icon *ngIf="item.name === 'bt_tv'" [icon] = 'faTv'></fa-icon>
+                <fa-icon *ngIf="item.name === 'bt_internet'" [icon] = 'faWifi'></fa-icon>
+                <fa-icon *ngIf="item.name === 'bt_companies'" [icon] = 'faBriefcase'></fa-icon>
+
+                
             </div>
             <div class="drafts__box__name mt-3">
                 <p> {{ item.title }} </p>
@@ -45,9 +51,9 @@
                                        [allData] = 'telecomsChildList'>
             </app-telecoms-phone-mobile>
             
-            <app-television *ngIf="categories.tv"
+            <app-telecoms-television *ngIf="categories.tv"
                             [allData] = 'telecomsChildList'>
-            </app-television>
+            </app-telecoms-television>
         
         </div>
     </ng-template>

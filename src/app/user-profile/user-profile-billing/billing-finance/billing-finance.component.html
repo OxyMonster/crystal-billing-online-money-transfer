@@ -4,7 +4,12 @@
 
         <div class="drafts__box col-lg-3 mt-5" *ngFor="let item of financesList">
             <div class="drafts__box__img">
-                <img src="assets/img/Image.png" alt="">
+                <fa-icon *ngIf="item.name === 'bf_bank'" [icon] = 'faPiggyBank'></fa-icon>
+                <fa-icon *ngIf="item.name === 'bf_microfinance'" [icon] = 'faHandHoldingUsd'></fa-icon>
+                <fa-icon *ngIf="item.name === 'bf_insurance'" [icon] = 'faHandHoldingMedical'></fa-icon>
+                <fa-icon *ngIf="item.name === 'bf_emoney'" [icon] = 'faCoins'></fa-icon>
+                <fa-icon *ngIf="item.name === 'bf_ecommerce'" [icon] = 'faLaptopCode'></fa-icon>
+                
             </div>
             <div class="drafts__box__name mt-3">
                 <p> {{ item.title }} </p>
@@ -42,7 +47,7 @@
                                     [allData] = 'financeChildList'>
             </app-insurance-services>
             <!-- * * * Microfinance organizations * * *  -->
-            <app-microfinance-organizations *ngIf="categories.microFinOrganizations"></app-microfinance-organizations>
+            <app-microfinance-organizaions *ngIf="categories.microFinOrganizations"></app-microfinance-organizaions>
         </div>
     </ng-template>
 

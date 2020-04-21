@@ -4,16 +4,18 @@
 
         <div class="drafts__box col-lg-3 mt-5" *ngFor="let item of transportationList">
             <div class="drafts__box__img">
-                <img src="assets/img/Image.png" alt="">
+                <fa-icon *ngIf="item.name === 'btr_shipment'" [icon] = 'faShippingFast'></fa-icon>
+                <fa-icon *ngIf="item.name === 'btr_travel'" [icon] = 'faPassport'></fa-icon>
+
             </div>
             <div class="drafts__box__name">
                 <p> {{ item.title }} </p>
             </div>
             <div class="drafts__box__amount">
-                <span> jdlasjdslkad </span>
+                <!-- <span> jdlasjdslkad </span> -->
             </div>  
             <div class="drafts__box__button">
-                <button class="main-button p-0">Select</button>
+                <button class="main-button p-0" (click) = 'openModal(modalContent, item.title, item.name)'>Select</button>
             </div>    
         </div>
 
@@ -23,6 +25,19 @@
         <div class="drafts__loading col-12 d-flex justify-content-center align-items-center">
             <app-loading-spinner></app-loading-spinner>
         </div>
+    </ng-template>
+
+
+    <ng-template #modalContent>
+        <app-modal [title] = 'modalTitle'></app-modal>
+        <!-- SHipping  -->
+        <app-transportation-shipping *ngIf="categories.shipping"
+                                    [allData] = 'transChildList'>
+        </app-transportation-shipping>
+        <!-- * * * Travel  -->
+        <app-transportation-travel *ngIf="categories.travel"
+                                    [allData] = 'transChildList'>
+        </app-transportation-travel>
     </ng-template>
 
 </div>

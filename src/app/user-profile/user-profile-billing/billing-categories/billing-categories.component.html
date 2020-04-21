@@ -4,7 +4,15 @@
 
         <div class="drafts__box col-lg-3 mt-5" *ngFor="let item of billersCategoryList">
             <div class="drafts__box__img">
-                <img src="assets/img/sxvadasxva1.svg" alt="">
+                <fa-icon *ngIf="item.name === 'b_utilities'" [icon]="faHome"></fa-icon>
+                <fa-icon *ngIf="item.name === 'b_telecoms'" [icon]="faPlug"></fa-icon>
+                <fa-icon *ngIf="item.name === 'b_finance'" [icon]="faWallet"></fa-icon>
+                <fa-icon *ngIf="item.name === 'b_entertainment'" [icon]="faGamepad"></fa-icon>
+                <fa-icon *ngIf="item.name === 'b_transportation'" [icon]="faGlobeAmericas"></fa-icon>
+                <fa-icon *ngIf="item.name === 'b_auto'" [icon]="faCar"></fa-icon>
+                <fa-icon *ngIf="item.name === 'b_education'" [icon]="faGraduationCap"></fa-icon>
+                <fa-icon *ngIf="item.name === 'b_donations'" [icon]="faDonate"></fa-icon>
+                <fa-icon *ngIf="item.name === 'b_other'" [icon]="faPuzzlePiece"></fa-icon> 
             </div>    
             <div class="drafts__box__name mt-3">
                 <p> {{ item.title }} </p>

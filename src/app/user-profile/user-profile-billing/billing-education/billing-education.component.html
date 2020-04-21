@@ -4,13 +4,17 @@
 
         <div class="drafts__box col-lg-3 mt-5" *ngFor="let item of educationsList">
             <div class="drafts__box__img">
-                <img src="assets/img/Image.png" alt="">
+                <fa-icon *ngIf="item.name === 'bed_university'" [icon] = 'faUniversity'></fa-icon>
+                <fa-icon *ngIf="item.name === 'bed_school'" [icon] = 'faSchool'></fa-icon>
+                <fa-icon *ngIf="item.name === 'bed_kindergarten'" [icon] = 'faBaby'></fa-icon>
+                <fa-icon *ngIf="item.name === 'bed_other'" [icon] = 'faUsers'></fa-icon>
+
             </div>
             <div class="drafts__box__name">
                 <p> {{ item.title }} </p>
             </div>
             <div class="drafts__box__amount">
-                <span> jdlasjdslkad </span>
+                <!-- <span> jdlasjdslkad </span> -->
             </div>  
             <div class="drafts__box__button">
                 <button class="main-button p-0">Select</button>
