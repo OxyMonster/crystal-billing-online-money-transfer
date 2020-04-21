@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserProfileHomeService } from './user-profile-home.service';
 import { UtileService } from 'src/app/shared/services/utile.service';
 import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-user-profile-home',
@@ -15,7 +16,8 @@ export class UserProfileHomeComponent implements OnInit {
   constructor(
     private homeService: UserProfileHomeService,
     private utileService: UtileService,
-    private router: Router
+    private router: Router,
+    private modalService: NgbModal
   ) { }
 
   ngOnInit(): void {
@@ -54,7 +56,13 @@ export class UserProfileHomeComponent implements OnInit {
         break; 
         
     }; 
+    
   }; 
+
+
+  openModal(content) {
+    this.modalService.open(content, {size: 'xl'})
+  }
 
 
 }

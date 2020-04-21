@@ -19,8 +19,30 @@ import { UtilitiesElectricityComponent } from './billing-utilities/utilities-ele
 import { UtilitiesGasComponent } from './billing-utilities/utilities-gas/utilities-gas.component';
 import { UtilitiesWasteRemovalComponent } from './billing-utilities/utilities-waste-removal/utilities-waste-removal.component';
 import { UtilitiesWaterComponent } from './billing-utilities/utilities-water/utilities-water.component';
+import { DayNightComponent } from '../components/day-night/day-night.component';
+import { DraftsUtilitiesComponent } from './billing-utilities/billing-utilities.component';
+import { DraftsTelecomsComponent } from './billing-telecoms/billing-telecoms.component';
+import { DraftsFinanceComponent } from './billing-finance/billing-finance.component';
+import { DraftsEntertaimentComponent } from './billing-entertaiment/billing-entertaiment.component';
+import { DraftsAutoComponent } from './billing-auto/billing-auto.component';
+import { DraftsEducationComponent } from './billing-education/drafts-education.component';
+import { DraftsDonationsComponent } from './billing-donations/billing-donations.component';
+import { DraftsOtherComponent } from './billing-other/billing-other.component';
+import { DraftsTransportationComponent } from './billing-transportation/billing-transportation.component';
+import { DraftsCategoriesComponent } from './billing-categories/billing-categories.component';
 
 const COMPONENTS = [
+  DayNightComponent,
+  DraftsUtilitiesComponent,
+  DraftsTelecomsComponent,
+  DraftsFinanceComponent,
+  DraftsEntertaimentComponent,
+  DraftsAutoComponent,
+  DraftsEducationComponent,
+  DraftsDonationsComponent,
+  DraftsOtherComponent,
+  DraftsTransportationComponent,
+  DraftsCategoriesComponent,
   FinesComponent,
   ParkingComponent,
   BanksComponent,

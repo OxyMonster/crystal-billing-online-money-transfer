@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserProfileHomeService {
 
-  apiUrl:string = '/api/users/get-user-info'; 
+  apiUrl:string = '/api/users/'; 
 
   constructor(
     private http: HttpClient
@@ -15,7 +15,13 @@ export class UserProfileHomeService {
   }
 
   getUserInfo(userInfo: any) {
-    return this.http.post(this.apiUrl, userInfo ); 
+    const userInfoUrl = 'get-user-info'
+    return this.http.post(this.apiUrl + userInfoUrl, userInfo ); 
   }; 
+
+  changePassword(userInfo: any) {
+    const changePassUrl = 'users/update-own-password'
+    return this.http.post(this.apiUrl + changePassUrl, userInfo); 
+  }
   
 }

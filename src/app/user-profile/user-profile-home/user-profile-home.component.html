@@ -30,7 +30,7 @@
         </div>
 
         <div class="home__info__buttons d-flex justify-content-center mt-3">
-            <button class="main-button">Change Password</button>
+            <button class="main-button" (click) = 'openModal(modalContent)'>Change Password</button>
         </div>
     </div>
 
@@ -63,18 +63,17 @@
             </div>
         </div>
 
-        <div class="home__wallets__buttons col-12 row justify-content-between">
-            <!-- <div class="col-md-6 mb-4">
-                <button class="main-button" style="width: auto;" (click) = 'routeToSelectedCategory("bills")'> Pay Bills </button>
-            </div>
-            <div class="col-md-6">
-                <button class="main-button" style="width: auto;" (click) = 'routeToSelectedCategory("transactions")'> Send Money </button>
-            </div> -->
-        </div>
+       
 
     </div>
     
    
+    <ng-template #modalContent>
+        <app-modal [title] = '"Change password"'></app-modal>
+        <!-- SHipping  -->
+        <app-change-password-modal></app-change-password-modal>
+       
+    </ng-template>
 
 </div>
 </ng-container>
